@@ -15,5 +15,5 @@ except ValueError:
 options = PasswordOptions(get_password_len)
 
 rand = ''.join(
-    [random.choice(string.ascii_letters + string.digits + string.punctuation) for n in range(options.password_range)])
+    [random.choice(string.ascii_letters + string.digits + string.punctuation) for n in range(options.password_len)])
 print(rand)
