@@ -23,6 +23,6 @@ get_uppercase_include = input("Do you want to include uppercase letters?(default
 if get_uppercase_include != "0":
     get_uppercase_include = string.ascii_uppercase
 
-options = PasswordOptions(get_password_len, get_uppercase_include)
+options = PasswordGenerator(get_password_len, get_uppercase_include)
 
 print(options)
