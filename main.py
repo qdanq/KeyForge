@@ -2,10 +2,16 @@ import random
 import string
 
 
-class PasswordOptions:
+class PasswordGenerator:
     def __init__(self, password_len, uppercase_include):
         self.password_len = password_len
         self.uppercase_include = uppercase_include
+
+    def __str__(self):
+        return ''.join(
+            [random.choice(self.uppercase_include + string.ascii_lowercase + string.digits + string.punctuation) for
+             n in
+             range(self.password_len)])
 
 
 try:
@@ -19,7 +25,4 @@ if get_uppercase_include != "0":
 
 options = PasswordOptions(get_password_len, get_uppercase_include)
 
-rand = ''.join(
-    [random.choice(options.uppercase_include + string.ascii_lowercase + string.digits + string.punctuation) for n in
-     range(options.password_len)])
-print(rand)
+print(options)
