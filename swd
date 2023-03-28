@@ -1,0 +1,49 @@
+[33mcommit 2ee044adc0e8b01cfcb5393e793152712e048d6e[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: qqbeach <danildzekelev@gmail.com>
+Date:   Thu Mar 23 20:44:29 2023 +0200
+
+    Add lowercase include
+
+[33mcommit b8a3fed7cc17b1c6978a78642bcd11e50d926e7b[m
+Author: qqbeach <danildzekelev@gmail.com>
+Date:   Tue Mar 21 15:44:46 2023 +0200
+
+    Rename class to existing in variable options
+
+[33mcommit e0d0dc312652ac774853a770216f37e8643056fb[m
+Author: qqbeach <danildzekelev@gmail.com>
+Date:   Tue Mar 21 15:40:28 2023 +0200
+
+    Move password generator to class as __str__ method
+    Delete variable rand
+    Rename class PasswordOptions to PasswordGenerator
+
+[33mcommit 674b556109e8a108996f8e7df7199de32ec252a3[m
+Author: qqbeach <danildzekelev@gmail.com>
+Date:   Mon Mar 20 21:32:00 2023 +0200
+
+    Add uppercase letters include option
+
+[33mcommit 0275bb02563c7ae8bd7f47fe044a0051290af06d[m
+Author: qqbeach <danildzekelev@gmail.com>
+Date:   Mon Mar 20 20:40:34 2023 +0200
+
+    Password length choise fix
+
+[33mcommit 7314ac4414f69c7d48050d97c8fefb47832320c2[m
+Author: qqbeach <danildzekelev@gmail.com>
+Date:   Fri Mar 17 12:35:59 2023 +0200
+
+    Add password length choice
+
+[33mcommit c8a56c311ae217721e697002145e1a1959e160d5[m
+Author: qqbeach <danildzekelev@gmail.com>
+Date:   Thu Mar 16 20:16:57 2023 +0200
+
+    Create main.py + make basis for password generator
+
+[33mcommit 45724dc1b63f1cec6deb797ff76501216bac32a6[m
+Author: Danylo <107553788+qqbeach@users.noreply.github.com>
+Date:   Thu Mar 16 13:39:23 2023 +0300
+
+    Initial commit
