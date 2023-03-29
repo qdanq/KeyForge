@@ -2,12 +2,14 @@ import random
 import string
 
 
-def generate_password(password_len, uppercase_include=True, lowercase_include=True):
+def generate_password(password_len, uppercase_include=True, lowercase_include=True, numbers_include=True):
     characters = ''
     if uppercase_include != "n":
         characters += string.ascii_uppercase
     if lowercase_include != "n":
         characters += string.ascii_lowercase
+    if numbers_include != "n":
+        characters += string.digits
     return ''.join(random.choice(characters) for _ in range(password_len))
 
 
@@ -20,6 +22,9 @@ get_uppercase_include = input("Do you want to include uppercase letters? (y/n): 
 
 get_lowercase_include = input(
     "Do you want to include lowercase letters? (y/n): ").lower() == 'y'
+
+get_numbers_include = input(
+    "Do you want to include numbers? (y/n): ").lower() == 'y'
 
 password = generate_password(get_password_len, get_uppercase_include, get_lowercase_include)
 print(password)
