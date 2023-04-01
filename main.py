@@ -1,5 +1,7 @@
 import random
 import string
+from tkinter import *
+from tkinter import ttk
 
 
 def generate_password(password_len, uppercase_include=True, lowercase_include=True, numbers_include=True, symbols_include=True):
@@ -13,6 +15,19 @@ def generate_password(password_len, uppercase_include=True, lowercase_include=Tr
     if symbols_include != "n":
         characters += string.punctuation
     return ''.join(random.choice(characters) for _ in range(password_len))
+
+root = Tk()
+root.title("KeyForge")
+mainframe = ttk.Frame(root, padding="3 3 12 12")
+mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
+root.columnconfigure(0, weight=1)
+root.rowconfigure(0, weight=1)
+
+feet = StringVar()
+feet_entry = ttk.Entry(mainframe, width=7, textvariable=feet)
+feet_entry.grid(column=2, row=1, sticky=(W, E))
+
+root.mainloop()
 
 
 try:
