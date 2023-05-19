@@ -48,6 +48,9 @@ symbols_var = tk.BooleanVar(value=True)
 symbols_checkbtn = tk.Checkbutton(options_frame, text="Include Symbols", variable=symbols_var)
 symbols_checkbtn.grid(row=4, column=0, columnspan=2, padx=10, pady=5)
 
+generate_button = tk.Button(window, text="Generate Password", command=generate_password)
+generate_button.pack(pady=10)
+
 window.mainloop()
 try:
     get_password_len = int(input("Enter length of password(default - 16): "))
