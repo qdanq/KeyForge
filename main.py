@@ -32,6 +32,22 @@ length_entry = tk.Entry(options_frame, width=5)
 length_entry.grid(row=0, column=1)
 length_entry.insert(tk.END, "16")
 
+uppercase_var = tk.BooleanVar(value=True)
+uppercase_checkbtn = tk.Checkbutton(options_frame, text="Include Uppercase", variable=uppercase_var)
+uppercase_checkbtn.grid(row=1, column=0, columnspan=2, padx=10, pady=5)
+
+lowercase_var = tk.BooleanVar(value=True)
+lowercase_checkbtn = tk.Checkbutton(options_frame, text="Include Lowercase", variable=lowercase_var)
+lowercase_checkbtn.grid(row=2, column=0, columnspan=2, padx=10, pady=5)
+
+numbers_var = tk.BooleanVar(value=True)
+numbers_checkbtn = tk.Checkbutton(options_frame, text="Include Numbers", variable=numbers_var)
+numbers_checkbtn.grid(row=3, column=0, columnspan=2, padx=10, pady=5)
+
+symbols_var = tk.BooleanVar(value=True)
+symbols_checkbtn = tk.Checkbutton(options_frame, text="Include Symbols", variable=symbols_var)
+symbols_checkbtn.grid(row=4, column=0, columnspan=2, padx=10, pady=5)
+
 window.mainloop()
 try:
     get_password_len = int(input("Enter length of password(default - 16): "))
