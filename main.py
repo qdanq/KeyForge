@@ -1,7 +1,9 @@
 import random
 import string
-from tkinter import *
-from tkinter import ttk
+import tkinter as tk
+
+
+# TODO: add requirements.txt
 
 
 def generate_password(password_len, uppercase_include=True, lowercase_include=True, numbers_include=True,
@@ -18,19 +20,19 @@ def generate_password(password_len, uppercase_include=True, lowercase_include=Tr
     return ''.join(random.choice(characters) for _ in range(password_len))
 
 
-root = Tk()
-root.title("KeyForge")
-mainframe = ttk.Frame(root, padding="3 3 12 12")
-mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
-root.columnconfigure(0, weight=1)
-root.rowconfigure(0, weight=1)
+window = tk.Tk()
+window.title("Password Generator")
 
-feet = StringVar()
-feet_entry = ttk.Entry(mainframe, width=7, textvariable=feet)
-feet_entry.grid(column=2, row=1, sticky=(W, E))
+options_frame = tk.Frame(window)
+options_frame.pack(pady=10)
 
-root.mainloop()
+length_label = tk.Label(options_frame, text="Password Length:")
+length_label.grid(row=0, column=0, padx=10, pady=5)
+length_entry = tk.Entry(options_frame, width=5)
+length_entry.grid(row=0, column=1)
+length_entry.insert(tk.END, "16")
 
+window.mainloop()
 try:
     get_password_len = int(input("Enter length of password(default - 16): "))
 except ValueError:
