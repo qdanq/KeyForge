@@ -4,7 +4,8 @@ from tkinter import *
 from tkinter import ttk
 
 
-def generate_password(password_len, uppercase_include=True, lowercase_include=True, numbers_include=True, symbols_include=True):
+def generate_password(password_len, uppercase_include=True, lowercase_include=True, numbers_include=True,
+                      symbols_include=True):
     characters = ''
     if uppercase_include != "n":
         characters += string.ascii_uppercase
@@ -15,6 +16,7 @@ def generate_password(password_len, uppercase_include=True, lowercase_include=Tr
     if symbols_include != "n":
         characters += string.punctuation
     return ''.join(random.choice(characters) for _ in range(password_len))
+
 
 root = Tk()
 root.title("KeyForge")
@@ -28,7 +30,6 @@ feet_entry = ttk.Entry(mainframe, width=7, textvariable=feet)
 feet_entry.grid(column=2, row=1, sticky=(W, E))
 
 root.mainloop()
-
 
 try:
     get_password_len = int(input("Enter length of password(default - 16): "))
@@ -45,5 +46,6 @@ get_numbers_include = input(
 
 get_symbols_include = input("Do you want to include symbols? (y/n): ").lower() == 'y'
 
-password = generate_password(get_password_len, get_uppercase_include, get_lowercase_include, get_numbers_include, get_symbols_include)
+password = generate_password(get_password_len, get_uppercase_include, get_lowercase_include, get_numbers_include,
+                             get_symbols_include)
 print(password)
