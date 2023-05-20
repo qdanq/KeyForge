@@ -6,16 +6,21 @@ import tkinter as tk
 # TODO: add requirements.txt
 
 
-def generate_password(password_len, uppercase_include=True, lowercase_include=True, numbers_include=True,
-                      symbols_include=True):
+def generate_password():
+    password_len = int(length_entry.get())
+    uppercase_include = uppercase_var.get()
+    lowercase_include = lowercase_var.get()
+    numbers_include = numbers_var.get()
+    symbols_include = symbols_var.get()
+
     characters = ''
-    if uppercase_include != "n":
+    if uppercase_include:
         characters += string.ascii_uppercase
-    if lowercase_include != "n":
+    if lowercase_include:
         characters += string.ascii_lowercase
-    if numbers_include != "n":
+    if numbers_include:
         characters += string.digits
-    if symbols_include != "n":
+    if symbols_include:
         characters += string.punctuation
     return ''.join(random.choice(characters) for _ in range(password_len))
 
