@@ -4,6 +4,7 @@ import tkinter as tk
 
 
 # TODO: add requirements.txt
+from tkinter import messagebox
 
 
 def generate_password():
@@ -22,6 +23,11 @@ def generate_password():
         characters += string.digits
     if symbols_include:
         characters += string.punctuation
+
+    if not characters:
+        messagebox.showinfo("Error", "Select at least one option.")
+        return
+
     password = ''.join(random.choice(characters) for _ in range(password_len))
     password_var.set(password)
 
@@ -62,21 +68,3 @@ password_label = tk.Label(window, textvariable=password_var, font=("Arial", 12),
 password_label.pack()
 
 window.mainloop()
-try:
-    get_password_len = int(input("Enter length of password(default - 16): "))
-except ValueError:
-    get_password_len = 16
-
-get_uppercase_include = input("Do you want to include uppercase letters? (y/n): ").lower() == 'y'
-
-get_lowercase_include = input(
-    "Do you want to include lowercase letters? (y/n): ").lower() == 'y'
-
-get_numbers_include = input(
-    "Do you want to include numbers? (y/n): ").lower() == 'y'
-
-get_symbols_include = input("Do you want to include symbols? (y/n): ").lower() == 'y'
-
-password = generate_password(get_password_len, get_uppercase_include, get_lowercase_include, get_numbers_include,
-                             get_symbols_include)
-print(password)
