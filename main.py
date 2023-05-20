@@ -3,7 +3,6 @@ import string
 import tkinter as tk
 
 
-# TODO: add requirements.txt
 from tkinter import messagebox
 
 
