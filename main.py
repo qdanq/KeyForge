@@ -22,7 +22,8 @@ def generate_password():
         characters += string.digits
     if symbols_include:
         characters += string.punctuation
-    return ''.join(random.choice(characters) for _ in range(password_len))
+    password = ''.join(random.choice(characters) for _ in range(password_len))
+    password_var.set(password)
 
 
 window = tk.Tk()
