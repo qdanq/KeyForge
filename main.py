@@ -1,8 +1,6 @@
 import random
 import string
 import tkinter as tk
-
-
 from tkinter import messagebox
 
 
@@ -29,6 +27,11 @@ def generate_password():
 
     password = ''.join(random.choice(characters) for _ in range(password_len))
     password_var.set(password)
+
+
+def copy_to_clipboard():
+    window.clipboard_clear()
+    window.clipboard_append(password_var.get())
 
 
 window = tk.Tk()
@@ -65,5 +68,9 @@ generate_button.pack(pady=10)
 password_var = tk.StringVar()
 password_label = tk.Label(window, textvariable=password_var, font=("Arial", 12), pady=10)
 password_label.pack()
+
+
+copy_button = tk.Button(window, text="Copy Password", command=copy_to_clipboard)
+copy_button.pack(pady=5)
 
 window.mainloop()
