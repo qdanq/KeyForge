@@ -38,7 +38,7 @@ window = tk.Tk()
 window.title("Password Generator")
 
 options_frame = tk.Frame(window)
-options_frame.pack(pady=10)
+options_frame.pack(pady=15, padx=20)
 
 length_label = tk.Label(options_frame, text="Password Length:")
 length_label.grid(row=0, column=0, padx=10, pady=5)
